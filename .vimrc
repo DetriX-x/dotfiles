@@ -4,7 +4,7 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'gruvbox-community/gruvbox'
 
@@ -25,6 +25,9 @@ call plug#end()
 vnoremap <C-c> "+y
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+"auto-pairs
+let g:AutoPairsFlyMode = 0
 
 "nerdtree
 nmap <F6> :NERDTreeToggle<CR>
@@ -49,18 +52,28 @@ function! ShowDocumentation()
   endif
 endfunction
 
+
+" COC config
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Disable function highlighting (affects both C and C++ files)
 let g:cpp_function_highlight = 0
 
 "airline themes
 set termguicolors
-let g:airline_solarized_bg='light'
-colorscheme gruvbox
+"let g:airline_solarized_bg='light'
+colorscheme onedark
+"colorscheme gruvbox
+set bg=dark
 
 "bind splits navigation to CTRL + hjkl
 nnoremap <C-h> <C-w>h
@@ -79,6 +92,15 @@ noremap <silent> <C-Down> :resize -3<CR>
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
+" change cursor style
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 
 set tabstop=4
 set ignorecase
