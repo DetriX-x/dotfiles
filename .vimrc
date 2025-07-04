@@ -1,3 +1,4 @@
+
 call plug#begin()
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -71,8 +72,8 @@ let g:cpp_function_highlight = 0
 "airline themes
 set termguicolors
 "let g:airline_solarized_bg='light'
-colorscheme onedark
-"colorscheme gruvbox
+"colorscheme onedark
+colorscheme gruvbox
 set bg=dark
 
 "bind splits navigation to CTRL + hjkl
