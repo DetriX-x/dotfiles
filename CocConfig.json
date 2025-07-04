@@ -1,5 +1,6 @@
 {
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/VERSION/clangd_VERSION/bin/clangd",
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/19.1.2/clangd_19.1.2/bin/clangd",
   "inlayHint.enable": false,
+  "semanticTokens.enable": true,
   "suggest.noselect": true
 }
