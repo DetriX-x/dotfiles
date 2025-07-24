@@ -8,7 +8,9 @@ endif
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if executable('node')
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 Plug 'jiangmiao/auto-pairs'
 
