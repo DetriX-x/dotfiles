@@ -60,6 +60,9 @@ function! ShowDocumentation()
   endif
 endfunction
 
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
 
 " COC config
 " Use `[g` and `]g` to navigate diagnostics
