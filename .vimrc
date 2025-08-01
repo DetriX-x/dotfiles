@@ -28,6 +28,16 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
+" Use tab for trigger completion with characters ahead and navigate.
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 "copy and paste
 vnoremap <C-c> "+y
@@ -39,9 +49,6 @@ let g:AutoPairsFlyMode = 0
 
 "nerdtree
 nmap <F6> :NERDTreeToggle<CR>
-
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 "turns lsp_cxx
 let g:lsp_cxx_hl_use_text_props = 1
@@ -75,14 +82,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Insert <tab> when previous text is space, refresh completion if not.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
