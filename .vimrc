@@ -70,6 +70,9 @@ endfunction
 " Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Formatting selected code
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 " COC config
 " Use `[g` and `]g` to navigate diagnostics
