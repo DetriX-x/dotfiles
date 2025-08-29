@@ -140,4 +140,5 @@ set hlsearch
 set incsearch
 set cursorline
 set splitbelow splitright
+set mouse-=a
 syntax on
