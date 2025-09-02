@@ -141,4 +141,5 @@ set incsearch
 set cursorline
 set splitbelow splitright
 set mouse-=a
+set wildmenu
 syntax on
