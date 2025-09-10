@@ -28,7 +28,7 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
-if exists("b:coc_enabled")
+if executable('node')
     " Use tab for trigger completion with characters ahead and navigate.
     " Insert <tab> when previous text is space, refresh completion if not.
     inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
